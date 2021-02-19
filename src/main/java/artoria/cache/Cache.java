@@ -85,10 +85,36 @@ public interface Cache {
      */
     void putAll(Map<?, ?> map);
 
+    /**
+     * Associate the specified value with the specified key in this cache.
+     * @param key The key with which the specified value is to be associated
+     * @param value The value to be associated with the specified key
+     * @param timeToLive The amount of time for the element to live, in millisecond. 0 indicates unlimited
+     * @param timeToIdle The amount of time for the element to idle, in millisecond. 0 indicates unlimited
+     * @return The previous value associated with key, or null if there was no mapping for key
+     */
+    /**
+     * Set time to live for given {@code key}..
+     * @param key must not be {@literal null}.
+     * @param timeToLive
+     * @param timeUnit must not be {@literal null}.
+     * @return {@literal null} . // todo
+     */
     boolean expire(Object key, long timeToLive, TimeUnit timeUnit);
 
+    /**
+     * Set the expiration for given {@code key} as a {@literal date} timestamp.
+     * @param key must not be {@literal null}.
+     * @param date must not be {@literal null}.
+     * @return {@literal null} when  // todo
+     */
     boolean expireAt(Object key, Date date);
 
+    /**
+     * Remove the expiration from given {@code key}.
+     * @param key must not be {@literal null}.
+     * @return {@literal null} // todo
+     */
     boolean persist(Object key);
 
     /**
