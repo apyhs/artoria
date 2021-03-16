@@ -27,6 +27,7 @@ public class SimpleReflectProvider implements ReflectProvider {
         return thisClazz != superClazz && Modifier.isPrivate(member.getModifiers());
     }
 
+    @Deprecated
     @Override
     public boolean matchTypes(Class<?>[] declaredTypes, Class<?>[] actualTypes) {
         Assert.notNull(declaredTypes, "Parameter \"declaredTypes\" must not null. ");
@@ -69,6 +70,7 @@ public class SimpleReflectProvider implements ReflectProvider {
         }
     }
 
+    @Deprecated
     @Override
     public Class<?>[] findTypes(Object[] params) {
         if (ArrayUtils.isEmpty(params)) { return new Class[ZERO]; }

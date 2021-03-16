@@ -15,6 +15,7 @@ public interface ReflectProvider {
      * @param actualTypes The invoker input types
      * @return True is matched, false is not
      */
+    @Deprecated
     boolean matchTypes(Class<?>[] declaredTypes, Class<?>[] actualTypes);
 
     /**
@@ -35,6 +36,7 @@ public interface ReflectProvider {
      * @param params Parameters
      * @return The parameters's types
      */
+    @Deprecated
     Class<?>[] findTypes(Object[] params);
 
     /**

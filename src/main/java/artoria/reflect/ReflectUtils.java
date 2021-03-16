@@ -30,6 +30,7 @@ public class ReflectUtils {
         ReflectUtils.reflectProvider = reflectProvider;
     }
 
+    @Deprecated
     public static boolean matchTypes(Class<?>[] declaredTypes, Class<?>[] actualTypes) {
 
         return getReflectProvider().matchTypes(declaredTypes, actualTypes);
@@ -45,6 +46,7 @@ public class ReflectUtils {
         getReflectProvider().makeAccessible(accessible);
     }
 
+    @Deprecated
     public static Class<?>[] findTypes(Object[] params) {
 
         return getReflectProvider().findTypes(params);
